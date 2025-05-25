@@ -10,4 +10,7 @@ RUN apt-get update && \
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
+# Bind to a dummy port so Render doesn't kill the service
+EXPOSE 8080
+
 CMD ["/start.sh"]
